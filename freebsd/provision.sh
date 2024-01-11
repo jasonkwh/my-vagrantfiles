@@ -26,6 +26,8 @@ if [ ! -d "/home/vagrant/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/vagrant/.oh-my-zsh/custom/themes/powerlevel10k
 fi
 
+# we have to use this git way because vagrant synced folder 
+# feature enables later...
 if [ ! -d "/home/vagrant/my-vagrantfiles" ]; then
     git clone https://github.com/jasonkwh/my-vagrantfiles.git /home/vagrant/my-vagrantfiles
     cp /home/vagrant/my-vagrantfiles/freebsd/.zshrc /home/vagrant/.zshrc
