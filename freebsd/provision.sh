@@ -28,4 +28,5 @@ fi
 
 if [ ! -d "/home/vagrant/my-vagrantfiles" ]; then
     git clone https://github.com/jasonkwh/my-vagrantfiles.git /home/vagrant/my-vagrantfiles
+    cp /home/vagrant/my-vagrantfiles/freebsd/.zshrc /home/vagrant/.zshrc
 fi
