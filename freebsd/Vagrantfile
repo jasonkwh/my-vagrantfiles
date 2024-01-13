@@ -12,10 +12,15 @@ Vagrant.configure("2") do |config|
 
   memory = "1024"
   cpus = 1
+  vpc = "virtualbox"
 
-  if ENV['VAGRANT_VPC'] == "virtualbox" || ENV['VAGRANT_VPC'].empty?
+  if ENV.key?('VAGRANT_VPC')
+    vpc = ENV['VAGRANT_VPC']
+  end
+
+  if vpc == "virtualbox"
     # VirtualBox
-    config.vm.box = "freebsd/FreeBSD-14.0-STABLE"
+    config.vm.box = "freebsd/FreeBSD-14.0-RELEASE"
 
     # Disable vagrant vbguest auto update
     if Vagrant.has_plugin?("vagrant-vbguest") then
@@ -30,7 +35,7 @@ Vagrant.configure("2") do |config|
       vb.memory = memory
       vb.cpus = cpus
     end
-  elsif ENV['VAGRANT_VPC'] == "hyperv"
+  elsif vpc == "hyperv"
     # Hyper-V
     config.vm.box = "generic/freebsd14"
 
