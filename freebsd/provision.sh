@@ -2,7 +2,7 @@
 
 pkg update
 pkg upgrade
-pkg install -y neofetch curl tmux git go rust zsh neovim
+pkg install -y neofetch curl tmux git go rust zsh neovim pigz pixz
 
 # change default shell to Zsh
 chsh -s /usr/local/bin/zsh vagrant
