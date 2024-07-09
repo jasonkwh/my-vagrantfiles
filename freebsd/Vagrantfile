@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
 
   if vpc == "virtualbox"
     # VirtualBox
-    config.vm.box = "freebsd/FreeBSD-14.0-RELEASE"
+    config.vm.box = "freebsd/FreeBSD-14.1-RELEASE"
 
     # Disable vagrant vbguest auto update
     if Vagrant.has_plugin?("vagrant-vbguest") then
